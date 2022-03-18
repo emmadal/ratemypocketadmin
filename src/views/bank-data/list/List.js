@@ -74,7 +74,7 @@ const List = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>List of institutions</strong>
+            <strong>List of Bank Data</strong>
           </CCardHeader>
           <CCardBody>
             <CTable hover striped responsive bordered>

@@ -75,7 +75,7 @@ const New = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Add a new institution</strong>
+            <strong>Add a new Bank Data</strong>
           </CCardHeader>
           <CCardBody>
             <CRow className="mb-5 align-items-center">

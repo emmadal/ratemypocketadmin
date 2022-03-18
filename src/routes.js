@@ -50,10 +50,14 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
-// Institutions
-const New = React.lazy(() => import('./views/institutions/new/New'))
-const List = React.lazy(() => import('./views/institutions/list/List'))
-const Edit = React.lazy(() => import('./views/institutions/edit/Edit'))
+// Bank Data
+const New = React.lazy(() => import('./views/bank-data/new/New'))
+const List = React.lazy(() => import('./views/bank-data/list/List'))
+const Edit = React.lazy(() => import('./views/bank-data/edit/Edit'))
+
+// Application Settings
+const SliderSettings = React.lazy(() => import('./views/app-settings/SliderSettings'))
+const OtherSettings = React.lazy(() => import('./views/app-settings/OtherSettings'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -101,9 +105,11 @@ const routes = [
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   { path: '/widgets', name: 'Widgets', element: Widgets },
 
-  { path: '/new-institution/', name: 'New', element: New },
-  { path: '/institutions/', name: 'List', element: List },
-  { path: '/edit-institution/', name: 'Edit', element: Edit },
+  { path: '/new-bank/', name: 'New', element: New },
+  { path: '/banks-data/', name: 'List', element: List },
+  { path: '/edit-bank/', name: 'Edit', element: Edit },
+  { path: '/others-settings/', name: 'OtherSettings', element: OtherSettings },
+  { path: '/slider-settings/', name: 'SliderSettings', element: SliderSettings },
 ]
 
 export default routes

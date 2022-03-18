@@ -14,6 +14,9 @@ import {
   cilHouse,
   cilPlus,
   cilList,
+  cilSettings,
+  cilBarcode,
+  cilAppsSettings,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
@@ -23,6 +26,46 @@ const _nav = [
     name: 'Dashboard',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavGroup,
+    name: 'Bank Data',
+    to: '/bank-data',
+    icon: <CIcon icon={cilHouse} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'New Bank Data',
+        to: 'new-bank/',
+        icon: <CIcon icon={cilPlus} customClassName="nav-icon" />,
+      },
+      {
+        component: CNavItem,
+        name: 'List of Bank Data',
+        to: 'banks-data/',
+        icon: <CIcon icon={cilList} customClassName="nav-icon" />,
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Application Settings',
+    to: '/app-settings',
+    icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Slider Settings',
+        to: 'slider-settings/',
+        icon: <CIcon icon={cilBarcode} customClassName="nav-icon" />,
+      },
+      {
+        component: CNavItem,
+        name: 'Others Settings',
+        to: 'others-settings/',
+        icon: <CIcon icon={cilAppsSettings} customClassName="nav-icon" />,
+      },
+    ],
   },
   // {
   //   component: CNavTitle,
@@ -122,26 +165,6 @@ const _nav = [
   //     },
   //   ],
   // },
-  {
-    component: CNavGroup,
-    name: 'Institutions',
-    to: '/institution',
-    icon: <CIcon icon={cilHouse} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'New Institution',
-        to: 'new-institution/',
-        icon: <CIcon icon={cilPlus} customClassName="nav-icon" />,
-      },
-      {
-        component: CNavItem,
-        name: 'List of institutions',
-        to: 'institutions/',
-        icon: <CIcon icon={cilList} customClassName="nav-icon" />,
-      },
-    ],
-  },
   // {
   //   component: CNavGroup,
   //   name: 'Buttons',
