@@ -125,52 +125,83 @@ const New = () => {
                 />
                 <CFormFeedback valid>Looks good!</CFormFeedback>
               </CCol>
-              <CCol md={4} className="mt-2">
-                <CFormLabel htmlFor="validationCustom01">Min/Max(loan values)</CFormLabel>
-                <CFormInput
-                  type="number"
-                  value={value.min_maxLoan}
-                  name="min_maxLoan"
-                  required
-                  onChange={handleChange}
-                />
-                <CFormFeedback valid>Looks good!</CFormFeedback>
-              </CCol>
-              <CCol md={4} className="mt-2">
-                <CFormLabel htmlFor="validationCustom02">Loan values</CFormLabel>
-                <CFormInput
-                  type="number"
-                  value={value.loanValue}
-                  name="loanValue"
-                  required
-                  onChange={handleChange}
-                />
-                <CFormFeedback valid>Looks good!</CFormFeedback>
-              </CCol>
-              <CCol md={4} className="mt-2">
-                <CFormLabel htmlFor="validationCustom01">Min/Max (term step value)</CFormLabel>
-                <CFormInput
-                  type="number"
-                  id="validationCustom01"
-                  value={value.min_maxTerm}
-                  name="min_maxTerm"
-                  required
-                  onChange={handleChange}
-                />
-                <CFormFeedback valid>Looks good!</CFormFeedback>
-              </CCol>
-              <CCol md={4} className="mt-2">
-                <CFormLabel htmlFor="validationCustom01">Term step value</CFormLabel>
-                <CFormInput
-                  type="number"
-                  value={value.termStep}
-                  name="termStep"
-                  required
-                  onChange={handleChange}
-                />
-                <CFormFeedback valid>Looks good!</CFormFeedback>
-              </CCol>
-              <CCol md={4} className="mt-2">
+              <div className="d-flex flex-row">
+                <CRow className="align-items-center">
+                  <CFormLabel htmlFor="validationCustom01">Min/Max(loan values)</CFormLabel>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      value={value.min_maxLoan}
+                      name="min_maxLoan"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      value={value.min_maxLoan}
+                      name="min_maxLoan"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                </CRow>
+                <CRow className="align-items-center">
+                  <CFormLabel htmlFor="validationCustom01">Min/Max (term step value)</CFormLabel>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      id="validationCustom01"
+                      value={value.min_maxTerm}
+                      name="min_maxTerm"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      id="validationCustom01"
+                      value={value.min_maxTerm}
+                      name="min_maxTerm"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                </CRow>
+                <CRow className="align-items-center">
+                  <CFormLabel htmlFor="validationCustom01">Min/Max (Interest rate %)</CFormLabel>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      id="validationCustom01"
+                      value={value.min_maxTerm}
+                      name="min_maxTerm"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                  <CCol xs="auto">
+                    <CFormInput
+                      type="number"
+                      style={{ width: 130 }}
+                      id="validationCustom01"
+                      value={value.min_maxTerm}
+                      name="min_maxTerm"
+                      required
+                      onChange={handleChange}
+                    />
+                  </CCol>
+                </CRow>
+              </div>
+
+              <CCol md={3} className="mt-2">
                 <CFormLabel htmlFor="validationCustom02">Rating</CFormLabel>
                 <CFormSelect onChange={handleChange} name="rating" value={value.rating}>
                   <option>Open this select menu</option>
@@ -182,21 +213,8 @@ const New = () => {
                 </CFormSelect>
                 <CFormFeedback valid>Looks good!</CFormFeedback>
               </CCol>
-              <CCol md={4} className="mt-2">
-                <CFormLabel htmlFor="validationCustom02">Min/Max</CFormLabel>
-                <CInputGroup>
-                  <CInputGroupText id="basic-addon1">%</CInputGroupText>
-                  <CFormInput
-                    type="number"
-                    value={value.min_maxInterest}
-                    name="min_maxInterest"
-                    onChange={handleChange}
-                    required
-                  />
-                  <CFormFeedback valid>Looks good!</CFormFeedback>
-                </CInputGroup>
-              </CCol>
-              <CCol md={4} className="mt-2">
+
+              <CCol md={3} className="mt-2">
                 <CFormLabel htmlFor="validationCustom02">Interest rate</CFormLabel>
                 <CInputGroup>
                   <CInputGroupText id="basic-addon1">%</CInputGroupText>
@@ -210,7 +228,7 @@ const New = () => {
                   <CFormFeedback valid>Looks good!</CFormFeedback>
                 </CInputGroup>
               </CCol>
-              <CCol md={4} className="mt-2">
+              <CCol md={3} className="mt-2">
                 <CFormLabel htmlFor="validationCustom02">Button link</CFormLabel>
                 <CFormInput
                   type="text"
@@ -221,10 +239,10 @@ const New = () => {
                 />
                 <CFormFeedback valid>Looks good!</CFormFeedback>
               </CCol>
-              <CCol md={4} className="mt-2">
+              <CCol md={3} className="mt-2">
                 <CFormLabel htmlFor="validationCustom02">Admin fees</CFormLabel>
                 <CInputGroup>
-                  <CInputGroupText id="basic-addon1">N</CInputGroupText>
+                  <CInputGroupText id="basic-addon1"></CInputGroupText>
                   <CFormInput
                     type="number"
                     value={value.adminFees}
