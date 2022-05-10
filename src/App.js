@@ -21,15 +21,15 @@ const Compare = React.lazy(() => import('./views/pages/compare/Compare'))
 class App extends Component {
   render() {
     return (
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Suspense fallback={loading}>
           <Routes>
-            <Route exact path="/login" name="Login Page" element={<Login />} />
-            <Route exact path="/register" name="Register Page" element={<Register />} />
-            <Route exact path="/404" name="Page 404" element={<Page404 />} />
-            <Route exact path="/500" name="Page 500" element={<Page500 />} />
-            <Route exact path="/compare-loan" name="Compare Loan" element={<Compare />} />
-            <Route path="*" name="Home" element={<DefaultLayout />} />
+            <Route path="/login" name="Login Page" element={<Login />} />
+            <Route path="/register" name="Register Page" element={<Register />} />
+            <Route path="/404" name="Page 404" element={<Page404 />} />
+            <Route path="/500" name="Page 500" element={<Page500 />} />
+            <Route path="/compare-loan" name="Compare Loan" element={<Compare />} />
+            <Route index path="/" name="Home" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
       </HashRouter>
