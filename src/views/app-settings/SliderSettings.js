@@ -14,10 +14,39 @@ import {
 import { amount_step, slider_step } from '../../utils/step_values'
 
 const SliderSettings = () => {
-  const [value, setValue] = useState({
+  const [data, setData] = useState({
     loanAmountMin1: 0,
     loanAmountMin2: 0,
     loanAmountMin3: 0,
+    loanAmountMax1: 0,
+    loanAmountMax2: 0,
+    loanAmountMax3: 0,
+    loanAmountStep1: 0,
+    loanAmountStep2: 0,
+    loanAmountStep3: 0,
+    termMin1: 0,
+    termMin2: 0,
+    termMin3: 0,
+    termMax1: 0,
+    termMax2: 0,
+    termMax3: 0,
+    termStep1: 0,
+    termStep2: 0,
+    termStep3: 0,
+    amountSliderLabel: '',
+    currency_symbol: '',
+    initial_position_term: 0,
+    hide_amount_slider: false,
+    termSliderLabel: '',
+    termSlider_day_singular: 0,
+    termSlider_month_singular: 0,
+    termSlider_year_singular: 0,
+    termSlider_day_plural: 0,
+    termSlider_month_plural: 0,
+    termSlider_year_plural: 0,
+    hide_term_slider: false,
+    initial_position_slider: 0,
+    hide_buttons: false,
   })
 
   const handleSubmit = async (e) => {
@@ -26,9 +55,9 @@ const SliderSettings = () => {
 
   const handleChange = (e) => {
     const target = e.target
-    const r = target.type === 'checkbox' ? target.checked : target.value
+    const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
-    setValue({ ...value, [name]: r })
+    setData({ ...data, [name]: value })
   }
 
   return (
@@ -47,46 +76,78 @@ const SliderSettings = () => {
                     <CRow>
                       <CCol md={4}>
                         <CFormLabel className="text-center">Min</CFormLabel>
-                        <CFormInput name="name" onChange={handleChange} type="number" />
                         <CFormInput
-                          className="my-3"
-                          name="name"
+                          value={data.loanAmountMin1}
+                          min="1"
+                          name="loanAmountMin1"
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          className="my-3"
+                          min="1"
+                          name="loanAmountMin2"
+                          value={data.loanAmountMin2}
+                          onChange={handleChange}
+                          type="number"
+                        />
+                        <CFormInput
+                          name="loanAmountMin3"
+                          min="1"
+                          value={data.loanAmountMin3}
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                       <CCol md={4}>
                         <CFormLabel className="text-center">Max</CFormLabel>
                         <CFormInput
-                          type="text"
-                          value={value.name}
-                          name="name"
+                          type="number"
+                          min="1"
+                          value={data.loanAmountMax1}
+                          name="loanAmountMax1"
                           onChange={handleChange}
                         />
                         <CFormInput
                           className="my-3"
-                          name="name"
+                          min="1"
+                          value={data.loanAmountMax2}
+                          name="loanAmountMax2"
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          value={data.loanAmountMax3}
+                          min="1"
+                          name="loanAmountMax3"
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                       <CCol md={4}>
                         <CFormLabel className="text-center">Step</CFormLabel>
                         <CFormInput
-                          type="text"
-                          value={value.name}
-                          name="name"
+                          type="number"
+                          min="1"
+                          value={data.loanAmountStep1}
+                          name="loanAmountStep1"
                           onChange={handleChange}
                         />
                         <CFormInput
                           className="my-3"
-                          name="name"
+                          value={data.loanAmountStep2}
+                          min="1"
+                          name="loanAmountStep2"
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          value={data.loanAmountStep3}
+                          min="1"
+                          name="loanAmountStep3"
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                     </CRow>
                   </CCol>
@@ -95,69 +156,84 @@ const SliderSettings = () => {
                     <CRow>
                       <CCol md={3}>
                         <CFormLabel className="text-center">Min</CFormLabel>
-                        <CFormInput name="name" onChange={handleChange} type="number" />
                         <CFormInput
-                          className="my-3"
-                          name="name"
+                          min="1"
+                          name="termMin1"
+                          value={data.termMin1}
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          className="my-3"
+                          min="1"
+                          name="termMin2"
+                          value={data.termMin2}
+                          onChange={handleChange}
+                          type="number"
+                        />
+                        <CFormInput
+                          name="termMin3"
+                          min="1"
+                          value={data.termMin3}
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                       <CCol md={3}>
                         <CFormLabel className="text-center">Max</CFormLabel>
                         <CFormInput
-                          type="text"
-                          value={value.name}
-                          name="name"
+                          type="number"
+                          min="1"
+                          value={data.termMax1}
+                          name="termMax1"
                           onChange={handleChange}
                         />
                         <CFormInput
                           className="my-3"
-                          name="name"
+                          min="1"
+                          value={data.termMax2}
+                          name="termMax2"
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          value={data.termMax3}
+                          min="1"
+                          name="termMax3"
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                       <CCol md={3}>
                         <CFormLabel className="text-center">Step</CFormLabel>
                         <CFormInput
-                          type="text"
-                          value={value.name}
-                          name="name"
+                          type="number"
+                          min="1"
+                          value={data.termStep1}
+                          name="termStep1"
                           onChange={handleChange}
                         />
                         <CFormInput
                           className="my-3"
-                          name="name"
+                          min="1"
+                          value={data.termStep2}
+                          name="termStep2"
                           onChange={handleChange}
                           type="number"
                         />
-                        <CFormInput name="name" onChange={handleChange} type="number" />
+                        <CFormInput
+                          min="1"
+                          value={data.termStep3}
+                          name="termStep3"
+                          onChange={handleChange}
+                          type="number"
+                        />
                       </CCol>
                       <CCol md={3}>
                         <CFormLabel className="text-center">Term</CFormLabel>
-                        <CFormInput
-                          type="text"
-                          value={value.name}
-                          placeholder="D"
-                          name="name"
-                          onChange={handleChange}
-                        />
-                        <CFormInput
-                          className="my-3"
-                          name="name"
-                          placeholder="M"
-                          onChange={handleChange}
-                          type="text"
-                        />
-                        <CFormInput
-                          name="name"
-                          onChange={handleChange}
-                          type="text"
-                          placeholder="Y"
-                        />
+                        <CFormInput type="text" disabled value="D" />
+                        <CFormInput className="my-3" disabled value="M" />
+                        <CFormInput type="text" disabled value="Y" />
                       </CCol>
                     </CRow>
                   </CCol>
@@ -197,20 +273,39 @@ const SliderSettings = () => {
                   <h6 className="fw-bold text-primary">Amount Slider</h6>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label">Label: </CFormLabel>
-                    <CFormInput type="text" name="amount" placeholder="Amount" />
+                    <CFormInput
+                      type="text"
+                      value={data.amountSliderLabel}
+                      name="amountSliderLabel"
+                      onChange={handleChange}
+                    />
                   </CCol>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label">Currency Symbol: </CFormLabel>
-                    <CFormInput type="text" name="currency_symbol" placeholder="N" />
+                    <CFormInput
+                      type="text"
+                      value={data.currency_symbol}
+                      onChange={handleChange}
+                      name="currency_symbol"
+                    />
                   </CCol>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label">Initial postion: </CFormLabel>
-                    <CFormInput type="number" name="initial_position_term" placeholder="" />
+                    <CFormInput
+                      min="1"
+                      type="number"
+                      value={data.initial_position_term}
+                      name="initial_position_term"
+                      onChange={handleChange}
+                    />
                   </CCol>
                 </CRow>
                 <CFormCheck
                   type="checkbox"
                   name="hide_amount_slider"
+                  checked={data.hide_amount_slider}
+                  value={data.hide_amount_slider}
+                  onChange={handleChange}
                   label="Hide amount slider"
                   className="my-2"
                 />
@@ -221,7 +316,12 @@ const SliderSettings = () => {
                   <h6 className="fw-bold text-primary">Term Slider</h6>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label">Label: </CFormLabel>
-                    <CFormInput type="text" name="term" placeholder="Term" />
+                    <CFormInput
+                      type="text"
+                      name="termSliderLabel"
+                      value={data.termSliderLabel}
+                      onChange={handleChange}
+                    />
                   </CCol>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label text-center">
@@ -229,13 +329,34 @@ const SliderSettings = () => {
                     </CFormLabel>
                     <CRow>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="day_singular" placeholder="day" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          placeholder="Days"
+                          value={data.termSlider_day_singular}
+                          name="termSlider_day_singular"
+                          onChange={handleChange}
+                        />
                       </CCol>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="month_singular" placeholder="Months" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          value={data.termSlider_month_singular}
+                          name="termSlider_month_singular"
+                          onChange={handleChange}
+                          placeholder="Months"
+                        />
                       </CCol>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="year_singular" placeholder="Years" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          value={data.termSlider_year_singular}
+                          name="termSlider_year_singular"
+                          onChange={handleChange}
+                          placeholder="Years"
+                        />
                       </CCol>
                     </CRow>
                   </CCol>
@@ -245,23 +366,53 @@ const SliderSettings = () => {
                     </CFormLabel>
                     <CRow>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="day_plural" placeholder="Day" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          value={data.termSlider_day_plural}
+                          onChange={handleChange}
+                          name="termSlider_day_plural"
+                          placeholder="Day"
+                        />
                       </CCol>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="month_plural" placeholder="Months" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          value={data.termSlider_month_plural}
+                          onChange={handleChange}
+                          name="termSlider_month_plural"
+                          placeholder="Months"
+                        />
                       </CCol>
                       <CCol xs="auto">
-                        <CFormInput type="text" name="year_plural" placeholder="Years" />
+                        <CFormInput
+                          type="number"
+                          min="1"
+                          value={data.termSlider_year_plural}
+                          onChange={handleChange}
+                          name="termSlider_year_plural"
+                          placeholder="Years"
+                        />
                       </CCol>
                     </CRow>
                   </CCol>
                   <CCol xs="auto">
                     <CFormLabel className="col-form-label">Initial postion: </CFormLabel>
-                    <CFormInput type="number" name="initial_position_slider" placeholder="" />
+                    <CFormInput
+                      type="number"
+                      min="1"
+                      value={data.initial_position_slider}
+                      name="initial_position_slider"
+                      onChange={handleChange}
+                    />
                   </CCol>
                 </CRow>
                 <CFormCheck
                   type="checkbox"
+                  value={data.hide_term_slider}
+                  checked={data.hide_term_slider}
+                  onChange={handleChange}
                   name="hide_term_slider"
                   label="Hide term slider"
                   className="my-2"
@@ -275,6 +426,9 @@ const SliderSettings = () => {
 
                 <CFormCheck
                   type="checkbox"
+                  value={data.hide_buttons}
+                  checked={data.hide_buttons}
+                  onChange={handleChange}
                   name="hide_buttons"
                   label="Hide buttons (labels and values move to the ends of the slider)"
                   className="mt-2"

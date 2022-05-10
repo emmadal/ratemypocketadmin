@@ -36,14 +36,6 @@ const OtherSettings = () => {
     sponsored: false,
   })
 
-  const options = [
-    { label: 'One', value: 1 },
-    { label: 'Two', value: 2 },
-    { label: 'Three', value: 3 },
-    { label: 'Four', value: 4 },
-    { label: 'Five', value: 5 },
-  ]
-
   const handleSubmit = async (e) => {
     e.preventDefault()
   }
