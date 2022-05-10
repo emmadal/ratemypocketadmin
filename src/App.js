@@ -21,7 +21,7 @@ const Compare = React.lazy(() => import('./views/pages/compare/Compare'))
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Suspense fallback={loading}>
           <Routes>
             <Route exact path="/login" name="Login Page" element={<Login />} />
