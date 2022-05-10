@@ -29,7 +29,7 @@ class App extends Component {
             <Route path="/404" name="Page 404" element={<Page404 />} />
             <Route path="/500" name="Page 500" element={<Page500 />} />
             <Route path="/compare-loan" name="Compare Loan" element={<Compare />} />
-            <Route index path="/" name="Home" element={<DefaultLayout />} />
+            <Route index path="*" name="Home" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
       </HashRouter>

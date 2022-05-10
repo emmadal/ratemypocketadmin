@@ -2,7 +2,6 @@
   "name": "ratemypocket-admin",
   "version": "0.1",
   "description": "Admin Dashboard for ratemypocket",
-  "homepage": ".",
   "license": "MIT",
   "scripts": {
     "build": "react-scripts build",

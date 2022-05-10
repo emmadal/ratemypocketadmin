@@ -16,7 +16,7 @@ const AppContent = () => {
                 <Route
                   key={idx}
                   path={route.path}
-                  exact={route.exact}
+                  index={route.exact}
                   name={route.name}
                   element={<route.element />}
                 />
