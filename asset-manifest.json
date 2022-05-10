@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ratemypocketadmin/static/css/main.c371a6c3.css",
-    "main.js": "/ratemypocketadmin/static/js/main.4e60eb59.js",
+    "main.js": "/ratemypocketadmin/static/js/main.955874df.js",
     "static/css/9624.5c6f3165.chunk.css": "/ratemypocketadmin/static/css/9624.5c6f3165.chunk.css",
     "static/js/9624.69525334.chunk.js": "/ratemypocketadmin/static/js/9624.69525334.chunk.js",
     "static/js/1670.243a17fa.chunk.js": "/ratemypocketadmin/static/js/1670.243a17fa.chunk.js",
@@ -77,6 +77,6 @@
   },
   "entrypoints": [
     "static/css/main.c371a6c3.css",
-    "static/js/main.4e60eb59.js"
+    "static/js/main.955874df.js"
   ]
 }
